@@ -20,15 +20,16 @@ Natural Language Processing (NLP) refers to the methodologies and complexity emp
   - $${\color{orange}Transformers}$$   
       - $${\color{lightskyblue}Seq2Seq \space (Encoder \space - \space Decoder)}$$
 - Video
+- References
 
 # The Beginning
 
 <p align="justify">
-The start of natural language processing relates during cold war where translation of Russian military documents, papers and literacy was essential to the United States to keep up to date. On <b>January 7th, 1954</b>, at IBM the university of Georgetown built the experiment of <b>"Georgetown-IBM"</b> making use of prepared selected phrases to enhance results, nevertheless outside those sentences the model struggle of to capture context then leading to an investment cease in research.
+The start of natural language processing relates during cold war where translation of Russian military documents, papers and literacy was essential to the United States to keep up to date. On <b>January 7th, 1954</b>, at IBM the university of Georgetown built the experiment of <b>"Georgetown-IBM"</b> making use of prepared selected phrases to enhance results, nevertheless outside those sentences the model struggle of to capture context then leading to an investment cease in research [1].
 </p>
 
 <p align="justify">
-Eliza was the <b>first natural language processing program released in 1966 by Joseph Weizenbaum</b> employing basic query consults in a database and adding basic language rules, result into the initial favorable outcomes tricking people on the time to think they were talking with a human being instead of a machine, thriving the Turing test.
+Eliza was the <b>first natural language processing program released in 1966 by Joseph Weizenbaum</b> employing basic query consults in a database and adding basic language rules, result into the initial favorable outcomes tricking people on the time to think they were talking with a human being instead of a machine, thriving the Turing test [2].
 </p>
 
 ```
@@ -48,7 +49,7 @@ ELIZA: Do you think coming here will help you not be unhappy?
 # Preprocessing Techniques
 
 <p align="justify">
-The complexity of natural language processing relies on <b>giving a reliable numeric representation called embedding</b>, to easily overcome this issue preprocessing techniques are applied after segmenting text into individual words named "tokens". A successful tokenization process should be able to adjust and clean the data, disjoin punctuation marks and break off grammar.
+The complexity of natural language processing relies on <b>giving a reliable numeric representation called embedding</b>, to easily overcome this issue preprocessing techniques are applied after segmenting text into individual words named "tokens". A successful tokenization process should be able to adjust and clean the data, disjoin punctuation marks and break off grammar [3].
 </p>
 
 - **Stemming:** Deletes word suffixes.
@@ -95,7 +96,6 @@ The following techniques provide a summary of strategies made through time to fi
 
 >[!NOTE]
 > You will see more refined techniques enhancing their results by reutilizing previous ones with additional adjustments.
-</p>
 
 ## $${\color{orange}Bag \space of \space Words \space (Bow)}$$
 
@@ -140,7 +140,7 @@ idf(t, D) = \log \left( \frac{\text{Number Total Documents}}{\text{Number Docume
 $$
 
 <p align="justify">
-Finally, the Term Frequency and the Inverse Document Frequency results are multiplied retrieving a combination of both table properties resulting in </b>bigger weights on words that more appear on each document that does not show in others</b>, therefore extracting the most significant words than better describe the given text, performing document clustering at the drawback of being sensitive to corpus where similar contents give less significant results.
+Finally, the Term Frequency and the Inverse Document Frequency results are multiplied retrieving a combination of both table properties resulting in <b>bigger weights on words that more appear on each document that does not show in others</b>, therefore extracting the most significant words than better describe the given text, performing document clustering at the drawback of being sensitive to corpus where similar contents give less significant results.
 </p>
 
 $$
@@ -148,3 +148,56 @@ TFIDF(t, d, D) = TF(t, d) \cdot IDF(t, D)
 $$
 
 https://github.com/user-attachments/assets/0459047e-40ec-4a38-a40f-8007c08650d4
+
+## $${\color{orange}Language \space Models}$$
+
+<p align="justify">
+Language models gives a <b> probability of appearance given sequence of words </b>, the simpler techniques employs N-Grams variations, computing the probabilistic distribution following words by the total frequency of large corpus, this primary premise allows to predict texts and even being applied to as a grammar correction, since well written words shows more often given a good dataset of training [4, 5].
+</p>
+
+$$
+P(w_1, w_2, \ldots, w_n) \approx P(w_1) \cdot P(w_2 \mid w_1) \cdot P(w_3 \mid w_2) \cdots P(w_n \mid w_{n-1})
+$$
+
+$$
+P(w_i \mid w_{i-1}) = \frac{\text{count}(w_{i-1}, w_i)}{\text{count}(w_{i-1})}
+$$
+
+$$
+P(w_i \mid w_{i-1}) = \frac{\text{times "}w_{i-1}, w_i\text{" appears}}{\text{times "}w_{i-1}\text{" appears}}
+$$
+
+<p align="justify">
+N-Grams were large employed on earlier stages of natural language processing due their obtaining results compare of their complexity, more sophisticated methods were consequently created to face their limitations, natural language tend to be creative a certain word expression is not likely to be captured by simpler, therefore n-grams variations explored later on adequate extra values into the calculations to perform slightly probability toward unseen n-grams in training dataset and small probability to execute a backoff process and decompose the word into more enhance context [4,5 6].
+</p>
+
+>[!NOTE]
+> Complex language models eventually lead to larger ones, conceiving the name of Large Language Model (LLM) by substituting N-Grams by huge correlated neural networks.
+
+https://github.com/user-attachments/assets/64be7fbc-01c5-4022-b5b5-71a20b784bb5
+
+# References
+
+<p align="justify">
+[1] M. Á. Álvarez Carmona, “Aplicaciones básicas de IA en procesamiento de lenguaje natural,” en Macroentrenamiento en Inteligencia Artificial (MeIA) 2025, Semana 1, SECIHTI–CIMAT Monterrey, México, jun. 2025.
+</p>
+
+<p align="justify">
+[2] D. Bergmann, “The ELIZA effect at work: Avoiding emotional attachment to AI coworkers,” IBM, IBM Think, [Online]. Available: https://www.ibm.com/es-es/think/insights/eliza-effect-avoiding-emotional-attachment-to-ai
+</p>
+
+<p align="justify">
+[3] J. Murel and E. Kavlakoglu, “What are stemming and lemmatization?,” IBM, [Online]. Available: https://www.ibm.com/think/topics/stemming-lemmatization
+</p>
+
+<p align="justify">
+[4] S. F. Chen and J. Goodman, “An empirical study of smoothing techniques for language modeling,” Computer Speech & Language, vol. 13, no. 4, pp. 359–394, Oct. 1999.
+</p>
+
+<p align="justify">
+[5] R. Kneser and H. Ney, “Improved backing-off for m-gram language modeling,” in Proc. IEEE Int. Conf. Acoustics, Speech, and Signal Processing (ICASSP), Detroit, MI, USA, 1995, pp. 181–184.
+</p>
+
+<p align="justify">
+[6] D. Jurafsky and J. H. Martin, “Kneser-Ney smoothing,” en Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models, 3rd ed., online manuscript, Jan. 6, 2026.
+</p>
