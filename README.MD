@@ -152,7 +152,13 @@ https://github.com/user-attachments/assets/0459047e-40ec-4a38-a40f-8007c08650d4
 ## $${\color{orange}Language \space Models}$$
 
 <p align="justify">
-Language models gives a <b> probability of appearance given sequence of words </b>, the simpler techniques employs N-Grams variations, computing the probabilistic distribution following words by the total frequency of large corpus, this primary premise allows to predict texts and even being applied to as a grammar correction, since well written words shows more often given a good dataset of training [4, 5].
+Language models gives a <b>probability of appearance given sequence of words</b>, the simpler techniques employs N-Grams variations, computing the probabilistic distribution following words by the total frequency of large corpus, this primary premise allows to predict texts and even being applied to as a grammar correction, since well written words shows more often given a good dataset of training [4, 5].
+</p>
+
+### $${\color{lightskyblue}N-Grams}$$
+
+<p align="justify">
+N-Grams were large employed on earlier stages of natural language processing due their obtaining results compare of their complexity, more sophisticated methods were consequently created to face their limitations, natural language tend to be creative a certain word expression is not likely to be captured by simpler, therefore n-grams variations explored later on adequate extra values into the calculations to perform slightly probability toward unseen n-grams in training dataset and small probability to execute a backoff process and decompose the word into more enhance context [4,5 6].
 </p>
 
 $$
@@ -167,14 +173,40 @@ $$
 P(w_i \mid w_{i-1}) = \frac{\text{times "}w_{i-1}, w_i\text{" appears}}{\text{times "}w_{i-1}\text{" appears}}
 $$
 
-<p align="justify">
-N-Grams were large employed on earlier stages of natural language processing due their obtaining results compare of their complexity, more sophisticated methods were consequently created to face their limitations, natural language tend to be creative a certain word expression is not likely to be captured by simpler, therefore n-grams variations explored later on adequate extra values into the calculations to perform slightly probability toward unseen n-grams in training dataset and small probability to execute a backoff process and decompose the word into more enhance context [4,5 6].
-</p>
-
 >[!NOTE]
 > Complex language models eventually lead to larger ones, conceiving the name of Large Language Model (LLM) by substituting N-Grams by huge correlated neural networks.
 
 https://github.com/user-attachments/assets/64be7fbc-01c5-4022-b5b5-71a20b784bb5
+
+## $${\color{orange}Word2Vec}$$   
+
+<p align="justify">
+One-Hot vectors struggle to encapsulate complex relations of natural language, the main threads to solve are word sparsity due to the given larger corpus and the different values a word can have regarding their context. The incorporation of <b>neural networks, projection layers and language models allows to group words with the same meaning into clusters providing enough abstraction to represent words into vectors</b> and consequently been able to perform basic algebra operations to gather more accurate words prediction [7].
+</p>
+
+### $${\color{lightskyblue}Neural \space Networks}$$
+
+<p align="justify">
+Artificial Neural Networks are an <b>abstract representation from human brain neuron cells</b>, the cell body integrated by dendrites sends electrical signals, therefore the axon carries the signal into the following neurons, leading to the perception idea [8]. As a result, <b>Artificial Neural Networks are a set of interconnected perceptrons in sets of layers, each connection is called weight and multiples the received value to forward the value into the next perceptrons</b>.
+</p>
+
+<p align="justify">
+Artificial Neural Networks compute in each epoch a <b>forward propagation</b> in which the network from the input until the output layer spread the received information to following layers up to the last layer, therefore computes the error employing a fitness function comparing the expected value with the obtain value, consequently adjusting each perceptrons connection weight value normally making use of "Stochastic Gradient Descend (SGD)" computing the partial derivate gaining the slope that describes the mathematical function representation that solves the challenge, passing the adjustment into backward direction, archiving <b>backward propagation</b>.
+</p>
+
+<p align="justify">
+Artificial Neural Networks <b>between layers applies a non-linear transformation given by a activation layer to enable the network to solve non-linear problems</b> due the missing linear representation, meaning it can not be solve through a straight line followed by the linear equation $f(x) = mx + b$ where $mx$ is the slope and $b$ a linear value that adjust the intersection.
+</p>
+
+<p align="justify">
+Artificial Neural Networks architecture is an entire field of study, accordingly different methods to interconnect each layer and perceptron had been develop, <b>Recurrent Neural Network (RNN) proceed to connect itself a perceptron or beneath layers</b> to solve vanishing or exploding gradient and stabilize training epochs, other future approaches seen into the Transformer architecture is residual training. Additional approaches such <b>Long Short Term Memory Neural Network (LSTM) incorporate an input, forget and output gate</b> to overcome in greater way than Recurrent Neural Networks the problem of vanishing gradient by letting the memory cell update itself to retain or discard information to learn long term dependencies [9].
+</p>
+
+https://github.com/user-attachments/assets/81108779-607d-4010-b80e-5f0db9d67d33
+
+### $${\color{lightskyblue}Continuous \space Bag \space of \space Words \space(CBOW)}$$
+
+### $${\color{lightskyblue}Skip-Gram}$$
 
 # References
 
@@ -200,4 +232,16 @@ https://github.com/user-attachments/assets/64be7fbc-01c5-4022-b5b5-71a20b784bb5
 
 <p align="justify">
 [6] D. Jurafsky and J. H. Martin, “Kneser-Ney smoothing,” en Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition with Language Models, 3rd ed., online manuscript, Jan. 6, 2026.
+</p>
+
+<p align="justify">
+[7] T. Mikolov, K. Chen, G. Corrado, and J. Dean, "Efficient Estimation of Word Representations in Vector Space," arXiv preprint arXiv:1301.3781, 2013. doi: 10.48550/arXiv.1301.3781
+</p>
+
+<p align="justify">
+[8] J. M. Keller, D. Liu, and D. B. Fogel, “Neural networks,” in Fundamentals of Computational Intelligence: Neural Networks, Fuzzy Systems,and Evolutionary Computation. 2016, pp. 5–55
+</p>
+
+<p align="justify">
+[9] M. Sundermeyer, R. Schlüter, and H. Ney, "LSTM Neural Networks for Language Modeling," in Proc. Interspeech 2012, Portland, OR, USA, Sep. 2012, pp. 194–197. doi: 10.21437/Interspeech.2012-65
 </p>
