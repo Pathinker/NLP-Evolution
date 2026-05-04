@@ -15,6 +15,8 @@ Natural Language Processing (NLP) refers to the methodologies and complexity emp
       - $${\color{lightskyblue}N-Grams}$$
   - $${\color{orange}Word2Vec}$$   
       - $${\color{lightskyblue}Neural \space Networks}$$
+        - $${\color{olive}Neural \space Language \space Models}$$
+        - $${\color{olive}Kneser \space Ney \space Smooting}$$
       - $${\color{lightskyblue}Continuous \space Bag \space of \space Words \space(CBOW)}$$
       - $${\color{lightskyblue}Skip-Gram}$$
   - $${\color{orange}Transformers}$$   
@@ -202,11 +204,82 @@ Artificial Neural Networks <b>between layers applies a non-linear transformation
 Artificial Neural Networks architecture is an entire field of study, accordingly different methods to interconnect each layer and perceptron had been develop, <b>Recurrent Neural Network (RNN) proceed to connect itself a perceptron or beneath layers</b> to solve vanishing or exploding gradient and stabilize training epochs, other future approaches seen into the Transformer architecture is residual training. Additional approaches such <b>Long Short Term Memory Neural Network (LSTM) incorporate an input, forget and output gate</b> to overcome in greater way than Recurrent Neural Networks the problem of vanishing gradient by letting the memory cell update itself to retain or discard information to learn long term dependencies [9].
 </p>
 
-https://github.com/user-attachments/assets/81108779-607d-4010-b80e-5f0db9d67d33
+- **Feed Forward Neural Network (FNN):** Regular correlation, the information flows continuously from the first layer up to the last.
+- **Recurrent Neural Network (RNN):** Employs connections from previous layers or itself.
+- **Long Short Term Memory Neural Network (LSTM):** Develop a memory cell with three gates (input, forget, output) to gather long term dependencies.
+- **Recurrent Long Short Term Memory Neural Network (LSTM-RNN):** Integration of recurrent connections into an LSTM network.
+
+### $${\color{olive}Neural \space Language \space Models}$$
+
+<p align="justify">
+Neural Networks infers the word embedding that suits the assigned task, adapting it functionality into Natural Language Processing, the output layer is connected trough a Language Model such N-Gram. This simpler configuration allows to capture more correlation within the corpus than a regular One-Hot Vectors approaches, by integrating a Language Model their nomenclature changes [10]:
+</p>
+
+| Model     | <span style="color:red">L</span>anguage <span style="color:red">M</span>odel |
+|-----------|----------------------------------------------|
+| FNN       | FNN<span style="color:red">LM</span> |
+| RNN       | RNN<span style="color:red">LM</span> |
+| LSTM      | LSTM<span style="color:red">LM</span> |
+| LSTM-RNN  | LSTM-RNN<span style="color:red">LM</span> |
+
+<p align="justify">
+Other alternative to improve results are changing the math N-Gram computation through the introduction of smoother techniques, there are plenty of methods discuss in [4], however Kneser-Ney smoothing will be explained by being use on a LSTM neural network [9].
+</p>
+
+### $${\color{olive}Kneser \space Ney \space Smooting}$$
+
+<p align="justify">
+Kneser Ney Smoothing takes the premise of applying <b>absolute discounting</b> saving probability for unseen combination of N-Grams, changing the mindset of "How likely is this word appearance" to "How likely is this context apparency" by modifying the math calculation from individual words into set of unique words [5, 6]. 
+</p>
+
+$$
+\frac{C(w_{i-1}, w_i)}{\sum_{v} C(w_{i-1}, v)}
+$$
+
+$$
+P_{KN}(w_i \mid w_{i-1}) = \frac{\text{times } w_{i-1}, w_i \text{ n-gram appear}}{\text{total n-grams}}
+$$
+
+$$
+P_{KN}(w_i \mid w_{i-1}) = \frac{\max\{C(w_{i-1}, w_i) - d, 0\}}{\sum_v C(w_{i-1}, v)} + \lambda(w_{i-1}) P_{KN}(w_i)
+$$
+
+<p align="justify">
+Performing absolute discounting <b>enhances results grouping up common word distributions</b>. The most remarkable examples of this are location names for example the word York is more likely to be found after New "P(York|New)", "New York" rather than York Terrier or Francisco over San "P(Francisco|San)" over San Bernard or San Judas.
+</p>
+
+<p align="justify">
+Kneser Ney Smoothing also applies an $- d$ oscillating within 0 to 1. It amplifies the unseen combination expressed in $\lambda(w_{i-1}) P_{KN}(w_i)$ by <b>decomposing and decreasing the n-gram dimensionality where the exact word combination is not likely to appear</b> accomplishing "backoff" process. For example, the N-Gram "P(drink|memory)" would not make sense to appear together since the corpus does not contain that exact word combination, therefore performs a more generalize search of just the word "memory".
+</p>
+
+>[!NOTE]
+> Both mechanisms reduce word sparsity and smooth the results.
+
+https://github.com/user-attachments/assets/efc0d476-4ed4-42cc-b0d5-2128c7d3c7d7
 
 ### $${\color{lightskyblue}Continuous \space Bag \space of \space Words \space(CBOW)}$$
 
+<p align="justify">
+Coming Soon (Sunday, May 10th)
+</p>
+
 ### $${\color{lightskyblue}Skip-Gram}$$
+
+<p align="justify">
+Coming Soon (Sunday, May 10th)
+</p>
+
+## $${\color{orange}Transformers}$$   
+
+<p align="justify">
+Coming Soon (Sunday, May 24th)
+</p>
+
+# Video
+
+<p align="justify">
+Coming Soon (Q3 2026)
+</p>
 
 # References
 
@@ -215,7 +288,7 @@ https://github.com/user-attachments/assets/81108779-607d-4010-b80e-5f0db9d67d33
 </p>
 
 <p align="justify">
-[2] D. Bergmann, “The ELIZA effect at work: Avoiding emotional attachment to AI coworkers,” IBM, IBM Think, [Online]. Available: https://www.ibm.com/es-es/think/insights/eliza-effect-avoiding-emotional-attachment-to-ai
+[2] D. Bergmann, “The ELIZA effect at work: Avoiding emotional attachment to AI coworkers,” IBM, IBM Think, [Online]. Available: https://www.ibm.com/think/insights/eliza-effect-avoiding-emotional-attachment-to-ai
 </p>
 
 <p align="justify">
@@ -244,4 +317,16 @@ https://github.com/user-attachments/assets/81108779-607d-4010-b80e-5f0db9d67d33
 
 <p align="justify">
 [9] M. Sundermeyer, R. Schlüter, and H. Ney, "LSTM Neural Networks for Language Modeling," in Proc. Interspeech 2012, Portland, OR, USA, Sep. 2012, pp. 194–197. doi: 10.21437/Interspeech.2012-65
+</p>
+
+<p align="justify">
+[10] D. Shi, “A Study on Neural Network Language Modeling,” CoRR, vol. abs/1708.07252, 2017. [Online].
+</p>
+
+<p align="justify">
+[11] T. Mikolov, K. Chen, G. Corrado, and J. Dean, “Efficient estimation of word representations in vector space,” arXiv preprint arXiv:1301.3781, 2013
+</p>
+
+<p align="justify">
+[12] A. Vaswani, N. Shazeer, N. Parmar, J. Uszkoreit, L. Jones, A. N. Gomez, L. Kaiser, and I. Polosukhin, “Attention Is All You Need,” arXiv preprint arXiv:1706.03762, 2017.
 </p>
