@@ -17,8 +17,9 @@ Natural Language Processing (NLP) refers to the methodologies and complexity emp
       - $${\color{lightskyblue}Neural \space Networks}$$
         - $${\color{olive}Neural \space Language \space Models}$$
         - $${\color{olive}Kneser \space Ney \space Smooting}$$
-      - $${\color{lightskyblue}Continuous \space Bag \space of \space Words \space(CBOW)}$$
-      - $${\color{lightskyblue}Skip-Gram}$$
+      - $${\color{lightskyblue}Architecture}$$
+        - $${\color{olive}Continuous \space Bag \space of \space Words \space(CBOW)}$$
+        - $${\color{olive}Skip-Gram}$$
   - $${\color{orange}Transformers}$$   
       - $${\color{lightskyblue}Seq2Seq \space (Encoder \space - \space Decoder)}$$
 - Video
@@ -257,22 +258,30 @@ Kneser Ney Smoothing also applies an $- d$ oscillating within 0 to 1. It amplifi
 
 https://github.com/user-attachments/assets/efc0d476-4ed4-42cc-b0d5-2128c7d3c7d7
 
-### $${\color{lightskyblue}Continuous \space Bag \space of \space Words \space(CBOW)}$$
+### $${\color{lightskyblue}Architecture}$$
 
 <p align="justify">
-Coming Soon (Sunday, May 10th)
+Word2Vec premise relies on finding a <b>simpler model from standard neural networks capable of handling high dense continuous vectors and producing satisfactory word embedding</b>. Although neural networks perform greatly given its non-linearity, so it does the computer complexity, therefore Word2Vec segments into two phases, learning continuous word vectors with a simpler model and then connected to a N-Gram language model [11].
 </p>
 
-### $${\color{lightskyblue}Skip-Gram}$$
+### $${\color{olive}Continuous \space Bag \space of \space Words \space(CBOW)}$$
 
 <p align="justify">
-Coming Soon (Sunday, May 10th)
+Coming Soon (Sunday, May 17th)
 </p>
+
+### $${\color{olive}Skip-Gram}$$
+
+<p align="justify">
+Coming Soon (Sunday, May 17th)
+</p>
+
+https://github.com/user-attachments/assets/4a080367-1e4d-42f9-8603-7d465430bfdc
 
 ## $${\color{orange}Transformers}$$   
 
 <p align="justify">
-Coming Soon (Sunday, May 24th)
+Coming Soon (Sunday, June 7th)
 </p>
 
 # Video
