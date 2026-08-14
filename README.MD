@@ -267,13 +267,13 @@ Word2Vec premise relies on finding a <b>simpler model from standard neural netwo
 ### $${\color{olive}Continuous \space Bag \space of \space Words \space(CBOW)}$$
 
 <p align="justify">
-Coming Soon (Q3 2026)
+Coming Soon (Q4 2026)
 </p>
 
 ### $${\color{olive}Skip-Gram}$$
 
 <p align="justify">
-Coming Soon (Q3 2026)
+Coming Soon (Q4 2026)
 </p>
 
 https://github.com/user-attachments/assets/4a080367-1e4d-42f9-8603-7d465430bfdc
@@ -281,13 +281,13 @@ https://github.com/user-attachments/assets/4a080367-1e4d-42f9-8603-7d465430bfdc
 ## $${\color{orange}Transformers}$$   
 
 <p align="justify">
-Coming Soon (Q3 2026)
+Coming Soon (Q4 2026)
 </p>
 
 # Video
 
 <p align="justify">
-Coming Soon (Q3 - Q4 2026)
+Coming Soon (Q4 2026)
 </p>
 
 # References
